@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    nav {
+      background-color: #883158;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+
+    .nav-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;
+      padding: 0.5rem 1rem;
+      transition: background 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+      border-radius: 5px;
+    }
+
+    @media (max-width: 768px) {
+      .nav-toggle {
+        display: block;
+      }
+
+      .nav-links {
+        flex-direction: column;
+        width: 100%;
+        display: none;
+      }
+
+      .nav-links.active {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <div id="home-btn" class="nav-brand" onclick="loadPage("About.html")">Benjamin Côté's website</div>
+
+  <div class="nav-toggle" onclick="toggleNav()">☰</div>
+
+  <div class="nav-links" id="navLinks">
+    <a id="research-btn" href="#" onclick="loadPage("Research.html")">Research</a>
+    <a id="publications-btn" href="#" onclick="loadPage("Publications.html")>Publications</a>
+  </div>
+
+</nav>
+
+<script>
+  function toggleNav() {
+    console.log("a")
+    const nav = document.getElementById('navLinks');
+    nav.classList.toggle('show');
+  }
+</script>
+
+</body>
+</html>
