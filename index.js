@@ -92,6 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
             publicationsButton.addEventListener('click', () => {
                 loadPage('htmlSections/Publications.html');
             });
+        }const teachingButton = document.querySelector('#teaching-btn'); // Assurez-vous que votre bouton a bien cet ID
+        if (teachingButton) {
+            teachingButton.addEventListener('click', () => {
+                loadPage('htmlSections/Teaching.html');
+            });
         }
     }, 300); // Donnez un peu de temps pour que la navbar soit complètement chargée
 });
