@@ -92,24 +92,6 @@
     nav.classList.toggle('show');
   }
 
-  function loadPage(page) {
-    console.log("Tentative de chargement de la page:", page);
-    fetch(page)
-            .then(response => {
-              console.log("Statut de la réponse:", response.status);
-              if (!response.ok) {
-                throw new Error(`HTTP error! status: ${response.status}`);
-              }
-              return response.text();
-            })
-            .then(content => {
-              console.log("Contenu chargé avec succès");
-              document.body.innerHTML = content;
-            })
-            .catch(error => {
-              console.error("Erreur lors du chargement de la page:", error);
-            });
-  }
 </script>
 
 </body>
